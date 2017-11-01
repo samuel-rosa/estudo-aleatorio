@@ -4,6 +4,9 @@ author: "Alessandro Samuel-Rosa"
 date: "1 November 2017"
 output:
   bookdown::word_document2:
+    reference_docx: ../docs/template.docx
+bibliography: biblio.bib
+csl: abnt.csl
 lang: pt
 ---
 
@@ -15,3 +18,20 @@ rmarkdown::render('main.Rmd', encoding = 'UTF-8', output_dir = "../docs")
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Introdução
+
+Texto de exemplo para criação do modelo de primeiro parágrafo [@NaveedEtAl2017].
+
+Texto de exemplo @NaveedEtAl2017 para criação do modelo de segundo parágrafo.
+
+# Material e Métodos
+
+Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
+Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
+Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
+
+## Dados do solo
+
+Mais texto.
+
+# Referências
