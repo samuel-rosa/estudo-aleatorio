@@ -1,7 +1,7 @@
 ---
-title: "Estrutura de diretórios e arquivos para novo projeto"
+title: "PROJECT FOLDER STRUCTURE"
 author: "Alessandro Samuel-Rosa"
-date: "29 de fevereiro de 2017"
+date: "29 February 2019"
 output:
   bookdown::word_document2:
     reference_docx: ../docs/template.docx
@@ -10,12 +10,24 @@ csl: abnt.csl
 lang: pt
 ---
 
-```{r, eval=FALSE, echo=FALSE}
-# NÃO USE O BOTÃO 'Knit' PARA GERAR O DOCUMENTO.
+<!-- ====================================================================================================== -->
+<!-- DOCUMENT SETUP ======================================================================================= -->
+<!-- ====================================================================================================== -->
+<!-- ATTENTION: DO NOT USE THE 'KNIT' BUTTON TO RENDER THIS FILE! ========================================= -->
+<!-- The following code chunk will render the document using rmarkdown::render(). ========================= -->
+<!-- ====================================================================================================== -->
+```{r render, eval=FALSE, echo=FALSE}
 rmarkdown::render('main.Rmd', encoding = 'UTF-8', output_dir = "../docs")
-id <- "crie um arquivo no Google Drive e cole aqui a sua ID"
+```
+<!-- ====================================================================================================== -->
+<!-- The following code chunk will update the exiting document on Google Drive. =========================== -->
+<!-- ====================================================================================================== -->
+```{r googledocs, eval=FALSE, echo=FALSE}
+id <- "create a document on Google Drive and paste its unique ID here"
 googledrive::drive_update(file = googledrive::as_id(id), media = "../docs/main.docx")
 ```
+<!-- ====================================================================================================== -->
+<!-- ====================================================================================================== -->
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, fig.asp = 1)
@@ -23,43 +35,77 @@ library(sp)
 library(lattice)
 ```
 
-# Introdução
+# Introduction
 
-Texto de exemplo para criação do modelo de primeiro parágrafo [@NaveedEtAl2017]. Texto. Texto. Texto. Texto.
-Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
-Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
+This is a citation of the work of @Samuel-RosaEtAl2015:
 
-Texto de exemplo @NaveedEtAl2017 para criação do modelo de segundo parágrafo. Texto. Texto. Texto. Texto. 
-Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
-Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
+> Using more detailed environmental covariates results in only a modest increase in the prediction accuracy of
+> linear prediction models. [@Samuel-RosaEtAl2015]
 
 <br>
 
-# Material e Métodos
+# Material and Methods
 
-Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. 
-Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
-Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. 
-Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
-Texto. Texto.
+How does a simple equation look like?
 
+<br>
 
-```{r, fig.cap="Este é o título da figura.", echo=FALSE}
+$$a^2 = b^2 + c^2$$
+
+<br>
+
+Lets try a more complex equation:
+
+<br>
+
+$$
+b_{sol_i} = 
+ \begin{cases}
+  1, & \text{if}\ a_{mss_j} \leq b_i \leq a_{mss_{j + 1}}\ \text{and}\ j = 1 \\ 
+  1, & \text{if}\ a_{mss_j} < b_i \leq a_{mss_{j + 1}}\ \text{and}\ j > 1 \\ 
+  0, & \text{otherwise}
+ \end{cases}
+$$
+
+<br>
+
+# Results and Discussion
+
+We now insert a figure in the document.
+
+```{r, fig.cap="This is the title of the figure.", echo=FALSE}
 data("meuse")
 xyplot(cadmium ~ dist, data = meuse)
 ```
 
-Agora inserimos uma lista de itens:
+<br>
 
-* Primeiro item. 
-* Segundo item. 
-* Terceiro item. 
-* Quarto item.
+Next we insert a list of items:
 
-Também inserimos uma tabela no texto.
+* First item;
+* Second item; 
+* Third item;
+* Fourth item.
+
+We can also insert a table in the document:
+
+<br>
 
 ```{r, echo=FALSE, results='asis'}
-pander::pandoc.table(meuse[1:10, c("zinc", "cadmium", "dist")], caption = "Este é o título da tabela")
+pander::pandoc.table(meuse[1:5, c("zinc", "cadmium", "dist")], caption = "This is the title of the table")
 ```
 
-# Referências bibliográficas 
+<br>
+
+# Conclusions
+
+This is how a numbered list looks like:
+
+1. First item:
+   i. First subitem;
+   ii. Second subitem;
+2. Second item.
+
+<br>
+
+# References
