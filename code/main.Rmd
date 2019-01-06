@@ -1,7 +1,7 @@
 ---
-title: "Untitled"
+title: "Estrutura de diretórios e arquivos para novo projeto"
 author: "Alessandro Samuel-Rosa"
-date: "1 November 2017"
+date: "29 de fevereiro de 2017"
 output:
   bookdown::word_document2:
     reference_docx: ../docs/template.docx
@@ -11,29 +11,55 @@ lang: pt
 ---
 
 ```{r, eval=FALSE, echo=FALSE}
+# NÃO USE O BOTÃO 'Knit' PARA GERAR O DOCUMENTO.
 rmarkdown::render('main.Rmd', encoding = 'UTF-8', output_dir = "../docs")
-id <- "1WdiN4BvW3udRRrJmeAAPurBz60zzxgLFfclJ9sE-_Lg"
-googledrive::drive_update(file = googledrive::as_id(id), media = "main.docx")
+id <- "crie um arquivo no Google Drive e cole aqui a sua ID"
+googledrive::drive_update(file = googledrive::as_id(id), media = "../docs/main.docx")
 ```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, fig.asp = 1)
+library(sp)
+library(lattice)
 ```
 
 # Introdução
 
-Texto de exemplo para criação do modelo de primeiro parágrafo [@NaveedEtAl2017].
+Texto de exemplo para criação do modelo de primeiro parágrafo [@NaveedEtAl2017]. Texto. Texto. Texto. Texto.
+Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
+Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
 
-Texto de exemplo @NaveedEtAl2017 para criação do modelo de segundo parágrafo.
+Texto de exemplo @NaveedEtAl2017 para criação do modelo de segundo parágrafo. Texto. Texto. Texto. Texto. 
+Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
+Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
+
+<br>
 
 # Material e Métodos
 
-Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
-Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
-Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
+Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. 
+Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
+Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. 
+Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
+Texto. Texto.
 
-```{r}
-library(sp)
+
+```{r, fig.cap="Este é o título da figura.", echo=FALSE}
 data("meuse")
 xyplot(cadmium ~ dist, data = meuse)
 ```
+
+Agora inserimos uma lista de itens:
+
+* Primeiro item. 
+* Segundo item. 
+* Terceiro item. 
+* Quarto item.
+
+Também inserimos uma tabela no texto.
+
+```{r, echo=FALSE, results='asis'}
+pander::pandoc.table(meuse[1:10, c("zinc", "cadmium", "dist")], caption = "Este é o título da tabela")
+```
+
+# Referências bibliográficas 
