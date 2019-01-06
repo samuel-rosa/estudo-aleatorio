@@ -12,10 +12,12 @@ lang: pt
 
 ```{r, eval=FALSE, echo=FALSE}
 rmarkdown::render('main.Rmd', encoding = 'UTF-8', output_dir = "../docs")
+id <- "1WdiN4BvW3udRRrJmeAAPurBz60zzxgLFfclJ9sE-_Lg"
+googledrive::drive_update(file = googledrive::as_id(id), media = "main.docx")
 ```
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, fig.asp = 1)
 ```
 
 # Introdução
@@ -30,8 +32,8 @@ Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
 Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
 Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.
 
-## Dados do solo
-
-Mais texto.
-
-# Referências
+```{r}
+library(sp)
+data("meuse")
+xyplot(cadmium ~ dist, data = meuse)
+```
