@@ -1,5 +1,6 @@
 ---
 title: "PROJECT FOLDER STRUCTURE"
+subtitle: "Project development using R/RStudio and git/GitHub"
 author: "Alessandro Samuel-Rosa"
 date: "29 February 2019"
 output:
@@ -53,6 +54,8 @@ How does a simple equation look like?
 $$a^2 = b^2 + c^2$$
 
 <br>
+
+## Complex equation
 
 Lets try a more complex equation:
 
